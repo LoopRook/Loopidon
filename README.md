@@ -1,4 +1,4 @@
-# ![MoshidonLogo](mastodon/src/main/res/mipmap-xhdpi/ic_launcher_round.png) Moshidon, the material you mastodon client!
+# ![MoshidonLogo](mastodon/src/main/res/mipmap-xhdpi/ic_launcher_round.png) Loopidon, the uncensored material you mastodon client!
 
 
 > A fast, highly customizable, up-to-date fork of [megalodon](https://github.com/sk22/megalodon) adding important features such as a fully federated timeline, unlisted posting, drafts, scheduled posts, bookmarks, and alt text warnings. 
