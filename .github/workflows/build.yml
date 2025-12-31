@@ -1,0 +1,27 @@
+name: Build Loopidon APK
+on: [push, workflow_dispatch] # Allows you to run it manually
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4 # Gets the code
+
+      - name: set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17' # Matches the requirement in your image
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew # Fixes permission errors
+
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug # Builds the APK without needing a signing key
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: yoshidon-debug-apk
+          path: app/build/outputs/apk/debug/*.apk # Saves the final file
